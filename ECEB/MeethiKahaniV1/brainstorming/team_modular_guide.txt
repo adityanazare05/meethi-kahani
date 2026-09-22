@@ -1,0 +1,61 @@
+===================================================================
+MEETHI KAHANI - TEAM MODULAR DEVELOPMENT & INTEGRATION GUIDE
+===================================================================
+
+HOW TO ASSIGN & INTEGRATE MODULES ACROSS YOUR TEAM:
+
+1. THE GOLDEN RULE FOR MULTI-DEVELOPER COLLABORATION
+---------------------------------------------------
+• Every team member builds inside their assigned module folder under `src/modules/`.
+• Every module imports shared types & state from `src/context/StoreContext.jsx` and `src/contracts/dataContracts.js`.
+• Because components consume the same data contracts, your team members can write their modules completely independently without breaking each other's code!
+
+2. MODULE ASSIGNMENTS & TEAM DIRECTORY MAP
+------------------------------------------
+• Developer 1: Module 1 - HeaderNav (`src/modules/HeaderNav/`)
+  - Centered Logo Header, Hamburger Drawer, Cart & Account triggers.
+
+• Developer 2: Module 2 - HeroBanner (`src/modules/HeroBanner/`)
+  - Hero Carousel Slider, Freshness Ticker Badge ("Freshly baked in last 3 hours").
+
+• Developer 3: Module 3 - ProductCatalog (`src/modules/ProductCatalog/`)
+  - Category Filter Tabs, Cookie Product Cards, PDP Page (`/product/:slug`), "The Kahani" Story Modal.
+
+• Developer 4: Module 4 - CartPayment (`src/modules/CartPayment/`)
+  - Slide-Over Cart Drawer, Cookie Crumb Progress Bar, Pincode Delivery Checker, Pixel-Perfect Dummy Razorpay Gateway Modal.
+
+• Developer 5: Module 5 - CustomerPortal (`src/modules/CustomerPortal/`)
+  - Customer Review Sliding Carousel (positioned above footer), Customer Account Modal (`👤 Account`).
+
+• Developer 6: Module 6 - AdminPortal (`src/modules/AdminPortal/`)
+  - Super Admin Dashboard (`/admin`), Hero Carousel Manager, Auto-Sync Coupons, Invoice Customizer Style B, & Dedicated Analytics Route (`/admin/analysis`).
+
+• Developer 7: Module 7 - SellerPortal (`src/modules/SellerPortal/`)
+  - Seller Kitchen Dashboard (`/seller`), Live Order Fulfillment Queue, Packaging Material Inventory Manager.
+
+3. HOW TO PLUG ALL MODULES INTO MAIN APP
+----------------------------------------
+In your main `App.jsx`, importing and assembling all 7 modules takes less than 20 lines of code:
+
+```jsx
+import { StoreProvider } from './context/StoreContext';
+import { HeaderNav } from './modules/HeaderNav/HeaderNav';
+import { HeroBanner } from './modules/HeroBanner/HeroBanner';
+import { ProductCatalog } from './modules/ProductCatalog/ProductCatalog';
+import { CartDrawer } from './modules/CartPayment/CartDrawer';
+import { ReviewsCarousel } from './modules/CustomerPortal/ReviewsCarousel';
+import { Footer } from './modules/Footer/Footer';
+
+export default function App() {
+  return (
+    <StoreProvider>
+      <HeaderNav />
+      <HeroBanner />
+      <ProductCatalog />
+      <ReviewsCarousel />
+      <Footer />
+      <CartDrawer />
+    </StoreProvider>
+  );
+}
+```

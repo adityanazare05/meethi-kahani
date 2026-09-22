@@ -1,0 +1,19 @@
+===================================================================
+MEETHI KAHANI - POTENTIAL RISKS & PROBLEMS TO WATCH (MAY CAUSE PROBLEMS)
+===================================================================
+
+[DECISION UPDATE: Corporate B2B customer track removed from scope. 
+This simplifies the platform strictly to B2C Personal & Gifting tracks and eliminates all Corporate B2B risks (Multi-address shipping, 30-day PO credit cycles, GSTIN B2B invoices, logo lead times, & corporate stock wipeout).]
+
+1. SINGLE STOCK POOL INVENTORY RISKS
+-----------------------------------
+• Risk 1: Gifting Surge Draining Personal Stock
+  - Problem: A sudden surge in B2C Gifting Box orders could drain cookie stock available for single B2C buyers.
+  - Solution Needed: Low-stock threshold alerts in Seller Portal (`/seller`) & real-time inventory count checks before checkout.
+
+2. NO-REFUND POLICY & FOOD SAFETY FRICTION
+------------------------------------------
+• Risk 2: Courier Transit Damage Complaints
+  - Problem: Food safety regulations mandate a strict NO-RETURNS / NO-REFUNDS policy, but cookies damaged in courier transit will cause bad customer reviews.
+  - Solution Needed: "Damage Replacement Policy" (Send fresh replacement box upon photo proof within 24 hours, instead of cash refund).
+

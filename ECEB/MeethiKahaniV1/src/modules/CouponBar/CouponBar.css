@@ -1,0 +1,127 @@
+/* Continuous Scrolling Coupon Roller Belt Styling */
+.coupon-roller-section {
+  width: 100%;
+  padding: 18px 0;
+  background-color: var(--bg-secondary);
+  border-top: 2px solid var(--text-primary);
+  border-bottom: 2px solid var(--text-primary);
+  overflow: hidden;
+  position: relative;
+}
+
+.coupon-roller-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  padding: 4px 0 12px;
+  user-select: none;
+}
+
+.coupon-roller-track {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: max-content;
+  padding: 0 10px;
+  animation: scrollRoller 55s linear infinite;
+  will-change: transform;
+}
+
+.coupon-roller-container:hover .coupon-roller-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollRoller {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Individual Roller Coupon Card */
+.coupon-roller-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-card);
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-pill);
+  padding: 6px 16px;
+  box-shadow: 0 4px 0 var(--text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coupon-roller-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--crimson-red);
+  box-shadow: 0 6px 0 var(--crimson-red);
+}
+
+.roller-discount-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #FFF1F1;
+  color: var(--crimson-red);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-weight: 900;
+  font-size: 12px;
+  border: 1px solid rgba(211, 24, 32, 0.2);
+}
+
+.roller-code-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 3px 6px 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.roller-code {
+  font-family: var(--font-mono, monospace);
+  font-weight: 900;
+  font-size: 13px;
+  color: var(--text-primary);
+  letter-spacing: 0.8px;
+}
+
+.btn-roller-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--crimson-red);
+  color: #ffffff;
+  border: none;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-roller-copy:hover {
+  background: #B01017;
+}
+
+.btn-roller-copy.copied {
+  background: #16a34a;
+}
+
+.roller-desc {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.roller-divider {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--crimson-red);
+  margin-left: 6px;
+  opacity: 0.6;
+}

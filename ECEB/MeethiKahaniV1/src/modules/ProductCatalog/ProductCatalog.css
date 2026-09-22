@@ -1,0 +1,871 @@
+/* Bold Retro Billboard Product Catalog Styling */
+.catalog-section {
+  padding: 48px 0;
+}
+
+.catalog-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.catalog-title {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--crimson-red);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.catalog-description {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0 auto 24px;
+}
+
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.tab-btn {
+  background: #ffffff;
+  border: 2px solid var(--text-primary);
+  color: var(--text-primary);
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.tab-btn:hover, .tab-btn.active {
+  background-color: var(--crimson-red);
+  color: #ffffff;
+  border-color: var(--crimson-red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(211, 24, 32, 0.2);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.product-card {
+  background: var(--bg-card);
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 6px 0 var(--text-primary);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 0 var(--crimson-red);
+  border-color: var(--crimson-red);
+}
+
+.product-image-box {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+  border-bottom: 2px solid var(--text-primary);
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.06);
+}
+
+.stock-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--text-primary);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stock-tag.low {
+  background: var(--crimson-red);
+}
+
+.product-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-name {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.product-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--crimson-red);
+}
+
+.product-taste-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.taste-tag-pill {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+/* Variant Selection Pills Row */
+.variant-pills-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.variant-pill-tag {
+  background: var(--bg-primary);
+  border: 1.5px solid var(--text-primary);
+  color: var(--text-primary);
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.variant-pill-tag.active, .variant-pill-tag:hover {
+  background: var(--crimson-red);
+  color: #ffffff;
+  border-color: var(--crimson-red);
+}
+
+.product-card-actions {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* In-Card Active Cart Controller Pill */
+.in-card-qty-controller {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--crimson-red);
+  color: #ffffff;
+  border-radius: var(--radius-pill);
+  padding: 6px 10px;
+  box-shadow: 0 4px 12px rgba(211, 24, 32, 0.25);
+  animation: popPillIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popPillIn {
+  from { transform: scale(0.92); opacity: 0.5; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.in-cart-qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--crimson-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+  font-weight: 900;
+}
+
+.in-cart-qty-btn:hover {
+  background: var(--bg-primary);
+  transform: scale(1.1);
+}
+
+.in-cart-qty-text {
+  font-size: 14px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+/* Redesigned World-Class Product Details Page (PDP) Styling */
+.pdp-section-container {
+  padding: 56px 0 70px;
+}
+
+.pdp-main-card {
+  background: #FAF5EE;
+  border: 2px solid var(--text-primary);
+  border-radius: 24px;
+  box-shadow: 0 8px 0 var(--text-primary);
+  overflow: hidden;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.pdp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 40px;
+  padding: 40px;
+}
+
+/* Gallery Column */
+.pdp-gallery-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pdp-gallery-main {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--text-primary);
+  overflow: hidden;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.pdp-gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.pdp-gallery-main:hover img {
+  transform: scale(1.04);
+}
+
+.pdp-stock-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--crimson-red);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(211, 24, 32, 0.3);
+}
+
+.pdp-thumbnails-row {
+  display: flex;
+  gap: 12px;
+}
+
+.pdp-thumb-box {
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--border-color);
+  overflow: hidden;
+  cursor: pointer;
+  background: #FFFFFF;
+  transition: all var(--transition-fast);
+}
+
+.pdp-thumb-box.active, .pdp-thumb-box:hover {
+  border-color: var(--crimson-red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(211, 24, 32, 0.2);
+}
+
+.pdp-thumb-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nutritional Values Breakdown Bar (Exact Replica of Reference Image) */
+.pdp-nutrition-card {
+  background: #FFFBF7;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-md);
+  padding: 28px 20px 24px;
+  text-align: center;
+  margin-top: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.pdp-nutrition-card::before {
+  content: '';
+  position: absolute;
+  top: -70px;
+  left: -70px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: rgba(255, 237, 213, 0.45);
+  pointer-events: none;
+}
+
+.nutrition-header {
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.nutrition-weight {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: #8C2B2B;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+
+.nutrition-disclaimer {
+  display: block;
+  font-size: 13px;
+  color: #666666;
+  font-style: italic;
+  font-family: var(--font-body);
+}
+
+.nutrition-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.nutrition-metric-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.metric-value {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: #B91C1C;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.metric-label {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  color: #333333;
+}
+
+/* Info Column */
+.pdp-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.pdp-tags-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pdp-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #FFF1F1;
+  color: var(--crimson-red);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(211, 24, 32, 0.2);
+}
+
+.pdp-tag-pill.tag-location {
+  background: #FFFFFF;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.pdp-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.pdp-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.pdp-price {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--crimson-red);
+}
+
+.pdp-pieces-sub {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+/* Pack Variant Selector */
+.pdp-variant-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pdp-selector-label {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pdp-pack-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.pdp-pack-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pdp-pack-btn:hover {
+  border-color: var(--crimson-red);
+}
+
+.pdp-pack-btn.active {
+  background: #FFF1F1;
+  border-color: var(--crimson-red);
+  color: var(--crimson-red);
+  box-shadow: 0 4px 0 var(--crimson-red);
+}
+
+.pack-sub {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* Pincode Widget */
+.pdp-pincode-widget {
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-color);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pdp-pincode-input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.pdp-pincode-input-group input {
+  flex: 1;
+  padding: 9px 14px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border-color);
+  font-size: 13.5px;
+  outline: none;
+}
+
+.pdp-pincode-msg {
+  font-size: 12.5px;
+  font-weight: 800;
+}
+
+.pdp-pincode-msg.success {
+  color: #16a34a;
+}
+
+.pdp-pincode-msg.error {
+  color: var(--crimson-red);
+}
+
+/* Actions Row */
+.pdp-actions-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.pdp-qty-stepper {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+  gap: 14px;
+}
+
+.pdp-qty-stepper button {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.pdp-qty-stepper span {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.pdp-add-btn {
+  flex: 1;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: var(--radius-pill);
+}
+
+/* Chef's Artisanal Recipe & Taste Spectrum Card */
+.pdp-recipe-card {
+  background: var(--bg-secondary);
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 4px 0 var(--text-primary);
+}
+
+.pdp-recipe-quote-block {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  position: relative;
+}
+
+.recipe-quote-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #FFF1F1;
+  color: var(--crimson-red);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+  border: 1px solid rgba(211, 24, 32, 0.2);
+}
+
+.recipe-quote-text {
+  font-size: 13.5px;
+  color: var(--text-primary);
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+.pdp-spectrum-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spectrum-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+.spectrum-bars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spectrum-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spectrum-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.spectrum-val {
+  color: var(--crimson-red);
+  font-weight: 800;
+}
+
+.spectrum-bar-track {
+  width: 100%;
+  height: 7px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.spectrum-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #F87171 0%, var(--crimson-red) 100%);
+  border-radius: var(--radius-pill);
+}
+
+.pdp-taste-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.pdp-recipe-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.pdp-sourcing-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.sourcing-spec-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+.sourcing-spec-box strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.sourcing-spec-box p {
+  margin: 0;
+  line-height: 1.35;
+}
+
+.pdp-notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pdp-note-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.pdp-specs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+/* Related Cookies Section */
+.pdp-related-section {
+  margin-top: 40px;
+}
+
+.related-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--crimson-red);
+  margin-bottom: 20px;
+}
+
+/* Mobile Responsive Optimization for Phone Mode */
+@media (max-width: 768px) {
+  .catalog-section {
+    padding: 28px 0;
+  }
+  .catalog-title {
+    font-size: 26px;
+  }
+  .catalog-description {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .category-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 0 4px;
+  }
+  .tab-btn {
+    flex: 1 1 auto;
+    text-align: center;
+    justify-content: center;
+    padding: 8px 14px;
+    font-size: 12.5px;
+  }
+  .product-grid {
+    grid-template-columns: 1fr; /* 1 product card per row in phone mode */
+    gap: 20px;
+  }
+  .product-image-box {
+    height: 220px;
+  }
+  .product-content {
+    padding: 16px;
+  }
+  .product-name {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .product-price {
+    font-size: 17px;
+  }
+  .taste-tag-pill {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+  .product-card-actions {
+    grid-template-columns: 1fr;
+  }
+  .pdp-grid {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 20px;
+  }
+  .pdp-gallery-main {
+    height: 240px;
+  }
+  .pdp-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* 1 product card per row */
+    gap: 18px;
+  }
+  .product-image-box {
+    height: 200px;
+  }
+  .stock-tag {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}

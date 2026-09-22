@@ -1,0 +1,854 @@
+/* ====================================================================
+   MEETHI KAHANI — KITCHEN OPERATIONS & VENDOR PORTAL STYLING
+   Strictly follows Frontend Warm Cream & Bold Crimson Brand System
+   ==================================================================== */
+
+.kitchen-portal-wrapper {
+  background-color: var(--bg-primary, #F9EFE5);
+  min-height: 100vh;
+  padding: 40px 0 80px;
+  color: var(--text-primary, #111111);
+  font-family: var(--font-body, system-ui, sans-serif);
+}
+
+/* Header */
+.kitchen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.kitchen-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFF1F2;
+  color: var(--crimson-red, #D31820);
+  border: 1.5px solid var(--crimson-red, #D31820);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.kitchen-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--text-primary, #111111);
+  margin: 0 0 6px;
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+  letter-spacing: -0.5px;
+}
+
+.kitchen-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary, #444444);
+  margin: 0;
+  max-width: 680px;
+  line-height: 1.5;
+}
+
+.kitchen-header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Oven Controller Hero Banner */
+.kitchen-oven-banner {
+  background: #FFFFFF;
+  border: 2px solid var(--text-primary, #111111);
+  border-radius: var(--radius-lg, 18px);
+  padding: 28px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 36px;
+  box-shadow: 0 8px 0 var(--text-primary, #111111);
+}
+
+.oven-banner-left {
+  flex: 1;
+  min-width: 280px;
+}
+
+.oven-temp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFF1F2;
+  border: 1px solid var(--crimson-red, #D31820);
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11.5px;
+  color: var(--crimson-red, #D31820);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.oven-batch-tag {
+  font-size: 11px;
+  font-weight: 900;
+  color: #B45309;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.oven-batch-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text-primary, #111111);
+  margin: 0 0 6px;
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+}
+
+.oven-batch-desc {
+  font-size: 13.5px;
+  color: var(--text-secondary, #444444);
+  margin: 0;
+}
+
+.oven-banner-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.oven-timer-box {
+  background: #FEF3C7;
+  border: 1.5px solid #FCD34D;
+  padding: 10px 18px;
+  border-radius: var(--radius-md, 12px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timer-label {
+  font-size: 10px;
+  font-weight: 900;
+  color: #B45309;
+  letter-spacing: 0.5px;
+}
+
+.timer-val {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--text-primary, #111111);
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+}
+
+.btn-broadcast {
+  background: var(--crimson-red, #D31820);
+  color: #FFFFFF;
+  border: 2px solid var(--text-primary, #111111);
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-size: 13.5px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--text-primary, #111111);
+  transition: all 0.15s ease;
+}
+
+.btn-broadcast:hover {
+  background: var(--crimson-hover, #B01017);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--text-primary, #111111);
+}
+
+/* 2-Column Grid Layout */
+.kitchen-grid-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 28px;
+}
+
+/* Card Styling */
+.kitchen-card {
+  background: #FFFFFF;
+  border: 2px solid var(--text-primary, #111111);
+  border-radius: var(--radius-lg, 18px);
+  padding: 26px;
+  box-shadow: 0 6px 0 var(--text-primary, #111111);
+}
+
+.kitchen-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--border-color, #E2D2C3);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+
+.card-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-header-left h3 {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--text-primary, #111111);
+  margin: 0;
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+}
+
+.live-pulse-badge {
+  font-size: 11px;
+  font-weight: 800;
+  color: #059669;
+  background: #D1FAE5;
+  border: 1px solid #A7F3D0;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+/* Live Orders List */
+.kitchen-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kitchen-order-item {
+  background: var(--bg-primary, #F9EFE5);
+  border: 1.5px solid var(--border-color, #E2D2C3);
+  border-radius: var(--radius-md, 12px);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.15s ease;
+}
+
+.kitchen-order-item.new-order {
+  border-color: var(--crimson-red, #D31820);
+  background: #FFFBF7;
+  box-shadow: 0 4px 10px rgba(211, 24, 32, 0.1);
+}
+
+.k-order-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.k-order-id-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.k-order-id {
+  font-size: 14px;
+  font-weight: 900;
+  font-family: monospace;
+  color: var(--text-primary, #111111);
+}
+
+.k-order-type {
+  font-size: 10px;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.k-order-type.gifting {
+  background: #FEF3C7;
+  color: #B45309;
+}
+
+.k-order-type.personal {
+  background: #DBEAFE;
+  color: #1E40AF;
+}
+
+.k-order-time {
+  font-size: 11.5px;
+  color: var(--text-secondary, #444444);
+}
+
+.k-order-customer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.k-cust-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-primary, #111111);
+}
+
+.k-cust-addr {
+  font-size: 12px;
+  color: var(--text-secondary, #444444);
+}
+
+.k-order-items {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color, #E2D2C3);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm, 6px);
+}
+
+.k-items-label {
+  font-size: 10.5px;
+  font-weight: 900;
+  color: var(--muted-grey, #666666);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.k-item-row {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  gap: 6px;
+  padding: 2px 0;
+}
+
+.k-item-bullet {
+  color: var(--crimson-red, #D31820);
+}
+
+.k-item-name {
+  font-weight: 700;
+  color: var(--text-primary, #111111);
+  flex: 1;
+}
+
+.k-item-qty {
+  font-weight: 800;
+  color: #B45309;
+  background: #FEF3C7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+.k-order-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.btn-kitchen-action {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  border: 1.5px solid var(--text-primary, #111111);
+  transition: all 0.15s ease;
+}
+
+.btn-kitchen-action.accept {
+  background: var(--crimson-red, #D31820);
+  color: #FFFFFF;
+  box-shadow: 0 3px 0 var(--text-primary, #111111);
+}
+
+.btn-kitchen-action.accept:hover {
+  background: var(--crimson-hover, #B01017);
+  transform: translateY(-1px);
+}
+
+.btn-kitchen-action.reject {
+  flex: 0.4;
+  background: #FFFFFF;
+  color: #991B1B;
+  border-color: #FECACA;
+}
+
+.btn-kitchen-action.reject:hover {
+  background: #FEE2E2;
+}
+
+.btn-kitchen-action.ship {
+  background: #059669;
+  color: #FFFFFF;
+  box-shadow: 0 3px 0 var(--text-primary, #111111);
+}
+
+.btn-kitchen-action.ship:hover {
+  background: #047857;
+}
+
+.shipped-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #6B21A8;
+  background: #F3E8FF;
+  padding: 8px 16px;
+  border-radius: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.empty-orders-box {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.empty-orders-box h4 {
+  font-size: 16px;
+  font-weight: 900;
+  margin: 12px 0 4px;
+}
+
+.empty-orders-box p {
+  font-size: 13px;
+  color: var(--text-secondary, #444444);
+  margin: 0;
+}
+
+/* Cookie SKU Restock Grid */
+.kitchen-sku-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.k-sku-card {
+  background: var(--bg-primary, #F9EFE5);
+  border: 1px solid var(--border-color, #E2D2C3);
+  border-radius: var(--radius-md, 12px);
+  padding: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.k-sku-img {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm, 6px);
+  object-fit: cover;
+  border: 1px solid var(--border-color, #E2D2C3);
+}
+
+.k-sku-body {
+  flex: 1;
+}
+
+.k-sku-name {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary, #111111);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.k-sku-stock-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.k-stock-count {
+  font-size: 11.5px;
+  color: var(--text-secondary, #444444);
+}
+
+.btn-restock-sm {
+  background: #FFFFFF;
+  border: 1px solid var(--text-primary, #111111);
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.btn-restock-sm:hover {
+  background: var(--text-primary, #111111);
+  color: #FFFFFF;
+}
+
+/* Hourly Baking Schedule */
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius-md, 12px);
+  background: var(--bg-primary, #F9EFE5);
+  border: 1px solid var(--border-color, #E2D2C3);
+}
+
+.schedule-item.active-bake {
+  border-color: #F59E0B;
+  background: #FFFBEB;
+}
+
+.schedule-time {
+  font-size: 12px;
+  font-weight: 900;
+  font-family: monospace;
+  color: var(--text-primary, #111111);
+  background: #FFFFFF;
+  border: 1px solid var(--border-color, #E2D2C3);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.schedule-info {
+  flex: 1;
+}
+
+.schedule-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary, #111111);
+}
+
+.schedule-meta {
+  font-size: 11px;
+  color: var(--text-secondary, #444444);
+}
+
+.status-pill.green {
+  background: #D1FAE5;
+  color: #065F46;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.status-pill.orange {
+  background: #FEF3C7;
+  color: #B45309;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.status-pill.grey {
+  background: #F3F4F6;
+  color: #4B5563;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+/* Quality Control Checklist */
+.qc-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.qc-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: var(--radius-sm, 6px);
+  transition: background 0.15s ease;
+}
+
+.qc-item:hover {
+  background: var(--bg-primary, #F9EFE5);
+}
+
+.qc-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--text-primary, #111111);
+  margin-bottom: 2px;
+}
+
+.qc-desc {
+  font-size: 12px;
+  color: var(--text-secondary, #444444);
+  line-height: 1.4;
+}
+
+/* Packaging Stock in Side Col */
+.k-pkg-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.k-pkg-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--bg-primary, #F9EFE5);
+  border-radius: var(--radius-sm, 6px);
+}
+
+.k-pkg-name {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary, #111111);
+}
+
+.k-pkg-meta {
+  font-size: 11px;
+  color: var(--text-secondary, #444444);
+}
+
+.btn-pkg-add {
+  background: #FFFFFF;
+  border: 1px solid var(--text-primary, #111111);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-pkg-add:hover {
+  background: var(--text-primary, #111111);
+  color: #FFFFFF;
+}
+
+/* Toast alert banner */
+.kitchen-toast-banner {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #FFFFFF;
+  border: 2px solid var(--text-primary, #111111);
+  color: var(--text-primary, #111111);
+  padding: 12px 20px;
+  border-radius: var(--radius-md, 12px);
+  font-size: 13.5px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 0 var(--text-primary, #111111);
+  z-index: 150;
+  animation: slideToast 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Kitchen Login Gate Styling */
+.kitchen-gate-wrapper {
+  min-height: 100vh;
+  background-color: var(--bg-primary, #F9EFE5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.kitchen-gate-card {
+  background: #FFFFFF;
+  border: 2px solid var(--text-primary, #111111);
+  border-radius: var(--radius-lg, 18px);
+  padding: 36px 32px;
+  max-width: 460px;
+  width: 100%;
+  box-shadow: 0 10px 0 var(--text-primary, #111111);
+  text-align: center;
+}
+
+.kitchen-gate-icon-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #FFF1F2;
+  border: 2px solid var(--crimson-red, #D31820);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--crimson-red, #D31820);
+}
+
+.kitchen-gate-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--text-primary, #111111);
+  margin: 0 0 6px;
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+}
+
+.kitchen-gate-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary, #444444);
+  line-height: 1.45;
+  margin: 0 0 24px;
+}
+
+.kitchen-gate-form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kitchen-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kitchen-form-label {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-primary, #111111);
+}
+
+.kitchen-input-field {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--text-primary, #111111);
+  border-radius: var(--radius-sm, 8px);
+  font-size: 14px;
+  background: var(--bg-primary, #F9EFE5);
+  color: var(--text-primary, #111111);
+  font-weight: 600;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.kitchen-input-field:focus {
+  border-color: var(--crimson-red, #D31820);
+  background: #FFFFFF;
+}
+
+.kitchen-btn-submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--crimson-red, #D31820);
+  color: #FFFFFF;
+  border: 2px solid var(--text-primary, #111111);
+  border-radius: var(--radius-sm, 8px);
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 0 var(--text-primary, #111111);
+  transition: all 0.15s ease;
+  margin-top: 4px;
+}
+
+.kitchen-btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--text-primary, #111111);
+}
+
+.kitchen-btn-submit:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--text-primary, #111111);
+}
+
+.kitchen-demo-hint {
+  margin-top: 18px;
+  background: #FEF3C7;
+  border: 1px dashed #B45309;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  color: #92400E;
+  font-weight: 700;
+}
+
+.kitchen-return-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary, #444444);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.kitchen-return-btn:hover {
+  color: var(--crimson-red, #D31820);
+  text-decoration: underline;
+}
+
+.kitchen-logout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  color: var(--crimson-red, #D31820);
+  border: 1.5px solid var(--crimson-red, #D31820);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.kitchen-logout-btn:hover {
+  background: var(--crimson-red, #D31820);
+  color: #FFFFFF;
+}
+
+.kitchen-error-alert {
+  background: #FEE2E2;
+  border: 1px solid #EF4444;
+  color: #B91C1C;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 900px) {
+  .kitchen-grid-layout {
+    grid-template-columns: 1fr;
+  }
+  .kitchen-oven-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

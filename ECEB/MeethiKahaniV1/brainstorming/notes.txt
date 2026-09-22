@@ -1,0 +1,178 @@
+===================================================================
+MEETHI KAHANI (MITHI KAHANI) - COMPREHENSIVE PROJECT SPECIFICATION
+===================================================================
+
+1. BRAND VISION & CORE STRATEGY
+--------------------------------
+• Store Name: Meethi Kahani (Mithi Kahani)
+• Dietary Guarantee: 100% PURE EGGLESS / VEGETARIAN (Crucial brand USP in India!).
+• Phase 1 Scope: CUSTOMER-FACING PROTOTYPE & ADMIN PORTAL (100% Focused on COOKIES ONLY!).
+• Business Model: 100% Direct-To-Consumer (B2C)
+• Focus: 100% Cookies for the next 1-2 years (Fudges/Cupcakes reserved for future Year 2 expansion).
+• Vibe: Premium, artisanal, handcrafted cookie brand.
+
+2. ORDER TYPES & PURCHASING TRACKS (PHASE 1)
+--------------------------------------------
+• Order Types (Categorization of Orders, NOT discounts):
+  1. Personal Order Type (`/`): Standard cookie purchases.
+  2. Gifting Order Type (`/gifting`): Curated gift boxes & Build-Your-Own gift tins with custom wax-sealed gift cards.
+
+• Discounts & Promo Codes Rule:
+  - Discounts are ONLY promo codes/offers created by Admin in the Offers Manager (e.g., `MEETHI20`, Flat ₹ off, BOGO).
+  - Personal and Gifting are strictly ORDER TYPES, not discount tags.
+
+3. SYSTEM ARCHITECTURE & DATA LOGIC
+-----------------------------------
+• Business Model: 100% Direct-To-Consumer (B2C)
+• DYNAMIC ADMIN & SELLER CMS ARCHITECTURE (REAL-TIME SYNC):
+  - Shared Reactive State Management (`StoreContext` + `localStorage` persistence).
+  - Admin & Seller Portal Access: 100% SECRET & HIDDEN from customers!
+    * Route: Secret direct URL routes `/admin` and `/seller` only.
+    * Authentication: Protected by UserID & Password Login Modal (No PINs!).
+    * UI Philosophy: Clean, lean, lightweight layout without unnecessary indicators or clutter.
+  - Admin Payment Management (`/admin`):
+    * Real-Time Transactions Ledger: View payments received, customer phone, payment mode (UPI/Card/COD), amount, and transaction status (`SUCCESS`, `PENDING`, `FAILED`).
+    * COD Controls: Global COD ON/OFF toggle, min/max COD limits, and COD handling fee setting.
+    * NESTED CATEGORY & PRODUCT CATALOG MANAGER:
+      - Level 1: Category Management Overview (List of categories e.g. `Cookies`, `Fudges`, `Gift Sets`). Actions: `+ Add New Category`, `Edit`, `Delete`, or toggle `Offline/Online`.
+      - Level 2: Category Drill-Down (Clicking any category opens its item manager). Manage SKUs, pricing, native photo uploads, single stock counts, and item-level `Offline/Online` toggles.
+    * DYNAMIC CATEGORY MANAGER & MODULAR SCHEMAS (FUTURE-PROOF SCALABILITY):
+      - Admin can manage multiple distinct product category lines.
+      - MODULAR SCHEMA ARCHITECTURE: Different product lines (e.g., Fudges, Cupcakes) use tailored database schemas distinct from Cookies!
+        * Cookies Schema: Pieces-based, single cookie stock pool, 14-day room-temp shelf life.
+        * Fudges Schema: Weight/Grammage-based (100g/250g slabs), temperature storage specs, distinct inventory attributes.
+      - Product catalog filters and category tabs render dynamically based on active Admin categories.
+    * ORDER HISTORY ARCHIVE: Clean searchable archive of all past completed & delivered orders (filter by date, order ID, or customer phone). Purely focused on order records.
+    * ANALYTICS & SALES REPORTING SECTION: Dedicated dashboard tab for summary stats (Total revenue, sales breakdown by day/week, top-performing cookie SKUs, visitor-to-customer conversion rates).
+      - View all Live Banners & Previously Live Archived Banners in a visual gallery.
+      - 1-Click "Activate / Deactivate" toggle for any past banner (no re-uploading needed!).
+      - Re-order / Arrange live banners sequence (Drag-and-Drop or Priority order: 1, 2, 3) for the homepage carousel slider.
+      - Upload new banners (Native image upload + optional CTA redirect link).
+    * Offers/Coupons manager, Global settings.
+  - Seller Features (`/seller`):
+    * Single Stock inventory manager (Native image upload for cookies, stock replenishment, low-stock alerts).
+    * PACKAGING MATERIAL INVENTORY MANAGER: Track box tins (Box of 4, 8, 12), wax seals, ribbon rolls, & thermal mailers stock counts with low-packaging alerts. Auto-decrements packaging stock when orders are packed!
+    * Order status tracking (`Baking` -> `Shipped` -> `Delivered`), Delivery zone manager.
+  - Real-Time Synchronization: Changes made in Admin/Seller portal instantly update Customer pages (`/`, `/gifting`) in real-time across tabs!
+• Inventory & Stock Architecture (CRITICAL):
+  - SINGLE MASTER STOCK TABLE for all cookie SKUs in DB.
+  - No separate combo stock entries. Every box (Personal, Gifting) decrements from the SAME single cookie inventory table.
+• Track & Discount Logic:
+  1. Personal Track (`/`): Standard cookie purchase from single stock pool.
+  2. Gifting Track (`/gifting`): Build-Your-Own Box / Curated selection pulling from single stock pool. Automatic 25% MRP discount applied in cart calculation (seamless pricing to customer). Includes optional Personalized Wax-Sealed Gift Card / Custom Message add-on!
+• Multi-Page SPA Routing Architecture:
+  1. `/` - Main Cookie Store (Hero Banner, Offers, Products, Cart)
+  2. `/gifting` - Dedicated Gifting Hub (Build-Your-Own Box with 25% MRP discount logic)
+  3. `/story` - Our Story (Simple placeholder brand page for Phase 1).der brand page for Phase 1).
+
+4. WEBSITE FRONTEND STRUCTURE & FLOW (EXACT LOGO PALETTE)
+--------------------------------------------------------
+1. Header Component (ULTRA-CLEAN CENTERED LOGO DESIGN):
+   - Left: Hamburger Menu Icon (`🍔`)
+   - Center: Meethi Kahani Logo (Centered prominently in the middle of the header)
+   - Right: Account Icon 👤 | Cart Icon 🛒 (with live item counter badge)
+   - Account Button Action: Clicking `Account` opens the User Account Portal Modal:
+     * LIVE REAL-TIME ORDER STATUS TRACKER: Real-time animated Cookie Crumb progress tracker (`Order Placed` -> `👩‍🍳 Baking` -> `🚚 Out for 1-Day Delivery` -> `✅ Delivered`). Uses pulsing Cookie emoji 🍪 to mark the CURRENT active stage! Auto-syncs live when kitchen staff updates status in Seller Portal! Displays estimated arrival time.
+     * Order History: Complete past orders archive, 1-click Reorder button, & Download PDF GST Invoice.
+     * Profile & Saved Addresses: Edit customer name, phone, email, & default delivery addresses.
+     * Kisse Coins Balance: View live Kahani Coins balance (🪙).
+     * Logout Button.
+   - Slide-Out Hamburger Drawer: Clicking the Hamburger icon smoothly slides out a sleek drawer from the left (Navigation links + Dynamic Category list).
+
+2. Hero Banner Carousel & Freshness Ticker Badge ("🔥 Freshly baked in last 3 hours").
+3. Product Catalog Grid with "The Kahani" Flip Cards & Creative Out-of-Stock Badges.
+4. Slide-Over Cart Drawer + Cookie Crumb Progress Bar + Pincode Delivery Checker.
+5. Customer Reviews Sliding Carousel (Positioned right above Footer).
+6. Footer Component with FSSAI Lic badge, Food Safety No-Refund Policy notice, & Secret Admin/Seller link gesture.
+
+• SHIPPING & DELIVERY ARCHITECTURE:
+  - Primary Delivery Model: 1-DAY EXPRESS DELIVERY exclusively focused on Metro Cities (Guarantees fresh oven-baked quality!).
+  - Dedicated Pincodes Table in DB (`Serviceable_Pincodes`): `id`, `pincode` (6 digits), `city_name`, `delivery_tier` (1-Day Express), `is_active` (Boolean flag).
+  - Customer Pincode Checker: Instant pincode availability validator in Cart Drawer & Product Pages against active DB table.
+  - Admin Delivery Zone Manager (`/admin`): Add/Edit pincodes, bulk-import metro pincodes, toggle active/inactive status.
+
+• INVOICE CUSTOMIZER & TEMPLATE EDITOR (`/admin`):
+  - Invoice Template Style: LOCKED IN to Style B (`Clean Modern GST Tax Invoice`).
+  - Customer Invoice Download Access: Customers can download their PDF Style B Tax Invoice from:
+    1. Checkout Success Screen right after order placement.
+    2. Customer "My Orders" History page in their account.
+    3. Link sent in automated WhatsApp / Email order confirmation.
+  - Company Legal Header: Edit Company Registered Name, GSTIN, FSSAI License Number, Address, and Invoice Logo.
+  - Automated Customer Volume Badges:
+    * `New Customer` (1st order)
+    * `Regular Buyer` (5+ orders)
+    * `Gold Cookie Fan` (15+ orders)
+    * `Legendary VIP` (25+ orders)
+  - Automated Customer Recency Badges:
+    * `Active` (Last order < 1 month ago)
+    * `Lapsing` (Last order 1-3 months ago)
+    * `Inactive` (Last order 3-6 months ago)
+    * `Dormant / Win-Back` (Last order 12+ months ago)
+• CAMPAIGN MANAGEMENT SYSTEM (`/admin`):
+  - Rule: All performance metrics & analytics belong strictly in the Analytics Section.
+• BRAND DESIGN RULE (STRICT):
+  - STRICT NO POPUPS POLICY: Zero popups! No intrusive promo popups, no live social proof popups, no distraction overlays. Clean, serene, ultra-luxurious browsing experience.
+
+• RECOMMENDED ECOSYSTEM PLUGINS FOR MEETHI KAHANI:
+  1. WhatsApp Business API Plugin (Interakt / Wati): Automated WhatsApp order receipts, delivery alerts & CRM campaign blasts.
+  2. WhatsApp Cart Abandonment Recovery Plugin: Auto-sends friendly WhatsApp reminders 30 mins after cart drop-off (recovers 15-25% lost sales!).
+  3. Digital E-Gift Card Plugin: Customers buy digital gift vouchers for friends delivered via WhatsApp/Email.
+  4. Hyper-Local Same-Day Courier Plugin (Porter/Dunzo API): Same-day 2-hour delivery rider assignment in Metro Cities.
+  5. Google Rich Snippets & Recipe SEO Plugin: Displays product photos, prices & 🍪 ratings directly inside Google Search results.
+  6. Shiprocket / Logistics Plugin: Auto-generates courier labels & syncs 1-Day Metro Express tracking IDs.
+  7. Razorpay / PhonePe Payment Gateway Plugin: Handles UPI QR codes & Card payments securely.
+  8. Meta Pixel & Google Ads Attribution Analytics Plugin: Measures ad ROI & conversion rates.
+  - Kahani Coins ("Kisse") Loyalty Plugin: Customers earn 1 "Kissa" coin for every ₹10 spent. Accumulated "Kisse" coins can be redeemed for discounts & free cookie boxes on future orders!
+• UI COMPONENTS & USER FLOW:
+  - Global Branding Icon Rule: Use Cookie emoji 🍪 instead of stars ✨/⭐ across announcements, rating indicators, badges, and highlights!
+  - Cart UI: Slide-Over Cart Drawer (slides in smoothly from right side, live item counter, subtotal calculation, Cookie Crumb progress bar for free shipping, instant checkout trigger).
+• DEDICATED PRODUCT DETAILS PAGE (`/product/:slug`):
+  - Route: Clicking any cookie card navigates to its dedicated page (e.g., `/product/saffron-pistachio-cookie`).
+  - Left Side: Image Gallery with 3-4 multi-angle thumbnail photos (Main shot, gooey center break shot, packaging shot). Clicking thumbnails switches main view.
+  - Right Side Layout Order:
+    1. Cookie Title & Price (MRP ₹)
+    2. Quantity Selector + "Add to Cart" Button
+    3. Pincode Express Delivery Checker
+    4. "The Kahani Behind This Cookie" (Placed at the VERY LAST section of the page details!).
+  - Payment Gateway Architecture: Pixel-Perfect Dummy Razorpay Gateway Modal for Phase 1.
+• STRUCTURED ADDRESS DATABASE SCHEMA (FOR REGIONAL ANALYTICS):
+  - Standardized Address Fields across `Customers` and `Orders` tables for fast SQL regional analysis:
+    * `address_line_1` (Flat/House No, Building Name, Street)
+    * `address_line_2` (Landmark, Area)
+    * `town` (Town / Locality name e.g. Bandra, Vashi, Thane West)
+    * `city` (Metro City e.g. Mumbai)
+    * `pincode` (6-digit Pincode)
+    * `state` (State e.g. Maharashtra)
+  - Benefits: Allows 1-click `GROUP BY town` and `GROUP BY city` queries for regional sales analysis on `/admin/analysis` & seamless courier API integration.
+  - Account Creation & Credentials: Create Seller/Baker IDs, generate initial passwords, assign kitchen locations, & toggle active/inactive access.
+  - Password Reset & Security: Admin can reset seller passwords.
+
+• SELLER PERFORMANCE ANALYTICS (`/admin/analysis`):
+  - Seller Productivity Tracking: Total cookies baked & restocked by each Seller ID (Week-to-Week & Month-to-Month).
+  - Order Fulfillment Velocity: Total orders packed & average packing speed per Seller ID.
+  - Seller Waste/Scrap Tracking: Track burnt or damaged batch logs by seller ID.
+    1. Stock & Baking Behavior Analytics (#1 TOP PRIORITY): Track single stock depletion velocity Week-to-Week & Month-to-Month (forecasts baking requirements for upcoming weeks).
+    2. Customer Demographics Analytics (Mumbai MMR Focus): Region sales breakdown by Mumbai Sub-Zones (South Mumbai, Western Suburbs, Eastern Suburbs, Navi Mumbai, Thane, Kalyan-Dombivli) + Age & Gender breakdown.
+    3. Financial & Revenue Analytics: Total revenue (₹), Average Order Value (AOV ₹), Personal vs Gifting revenue split, and Peak Ordering Hours & Days heatmap.
+    4. Product Flavor Velocity Analytics: Top 5 best-selling cookie SKUs, slow-moving SKU alerts, and popular Gifting Box combos.
+    5. Promo & Campaign ROI Analytics: Promo code redemption performance & WhatsApp campaign conversion ROI.
+    6. Customer Retention Analytics: Repeat purchase rate % and Kahani Coins ("Kisse") redemption activity.
+    7. Delivery & Logistics Analytics: Average delivery speed, on-time delivery rate %, & top delivery pincodes.
+    8. Cart & Checkout Funnel Analytics: Cart abandonment rate % & most abandoned cookie SKUs.
+    9. Customer Satisfaction & Review Rating Analytics: Average store rating (e.g. 4.9 🍪 out of 5) & sentiment keyword trends ("Fresh", "Melt in mouth").
+  - Admin Feedback Control (`/admin`): Approve/Reject customer reviews and select which reviews appear in the sliding carousel.
+  - Global Branding Icon Rule: Use Cookie emoji 🍪 instead of stars ✨/⭐ across announcements, rating indicators, badges, and highlights!
+  - Cart UI: Slide-Over Cart Drawer (slides in smoothly from right side, live item counter, subtotal calculation, Cookie Crumb progress bar for free shipping, instant checkout trigger).
+  - Payment Gateway Architecture: Pixel-Perfect Dummy Razorpay Gateway Modal for Phase 1 (simulated UPI QR scan, Card inputs, instant success trigger). Designed in pluggable `paymentService.js` for 1-click live Razorpay API activation later. Includes global COD toggle and handle fees.
+  - Freshness Ticker (Homepage Hero Badge): "🔥 [X] Boxes left — Freshly baked in the last 3 hours" (Drives urgency & fresh bakery feel).
+
+5. COLOR PALETTE & DESIGN SYSTEM (EXACT LOGO MATCH)
+--------------------------------------------------
+• Primary Brand Color: Deep Crimson Red / Terracotta Maroon from Logo (#9A2222 / #9E2A2B)
+• Primary Background: Soft Cream Vanilla Linen from Logo (#FAF5EE / #F8F3EB)
+• Secondary Accents: Dark Cocoa (#3D2314), Soft Warm Cookie Gold (#D4A359)
+• Rule: Strictly adhere to the exact colors extracted from the uploaded logo image!
+
+6. BUSINESS RULES & LEGAL POLICIES
+----------------------------------
+• Refund Policy: STRICT NO RETURNS / NO REFUNDS (Mandated by food safety regulations).

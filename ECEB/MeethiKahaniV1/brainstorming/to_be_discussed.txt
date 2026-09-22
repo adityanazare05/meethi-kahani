@@ -1,0 +1,34 @@
+===================================================================
+MEETHI KAHANI - TO BE DISCUSSED (DEFERRED ITEMS)
+===================================================================
+
+1. COOKIE FLAVORS & SKU CATALOG
+-------------------------------
+• Specific flavor varieties (e.g. Classic Choc Chip, Red Velvet, Fusion Cardamom-Pistachio, Stuffed/Gooey options).
+• Dietary tags (Eggless, Sugar-Free, Gluten-Free options).
+
+2. BUILD-YOUR-OWN BOX SIZES & CATCHY MECHANICS
+----------------------------------------------
+• Box capacity options (e.g., Box of 4, Box of 8, Box of 12).
+• Catchy visual box assembly interaction on frontend.
+
+3. SQL DATABASE SCHEMA & BACKEND CONTRACT
+------------------------------------------
+• Full SQL table schemas (Products, Single_Stock, Orders, Order_Items, Customers).
+• Java Spring Boot REST API endpoint design.
+
+4. SELLER / ADMIN PORTAL (PHASE 2)
+----------------------------------
+• Product editing, package counts, BOGO promotions.
+• Low stock threshold alerts and inventory management dashboard.
+• Visitor tracking analytics & automated email notifications.
+
+5. OTP AUTHENTICATION & LOGIN FLOW
+----------------------------------
+• OTP Modal Popup vs Standalone Login Page.
+• User profile session persistence & order history.
+
+6. KISSE (KAHANI COINS) LOYALTY CATEGORIZATION & REWARD TIERS
+--------------------------------------------------------------
+• Specific earning rates, redemption ratios, & Kisse reward tiers.
+• Bonus Kisse on birthdays, referral bonuses, & festive multiplier events.

@@ -1,0 +1,43 @@
+===================================================================
+MEETHI KAHANI - IMMEDIATE DISCUSSION AGENDA (PRIORITY 1)
+===================================================================
+
+1. CART & CHECKOUT UI FLOW
+--------------------------
+• Slide-Over Drawer vs Dedicated /cart & /checkout Pages.
+• Cart summary details, single stock calculation, promo code application.
+
+2. OTP AUTHENTICATION FLOW
+--------------------------
+• Instant OTP Modal Popup vs Standalone Login page.
+• Customer profile & order history view in prototype.
+
+3. HOMEPAGE COMPONENTS & SECTION LAYOUT (`/`)
+---------------------------------------------
+• Hero Banner (Headline, slogan, visual CTA - Dynamic Admin Editable).
+• Offers & Deals Section (BOGO banners, festive discounts - Dynamic Admin Editable).
+• Product Catalog Grid (Single stock items, quick-add interaction - Dynamic Admin Editable).
+• Customer Reviews / Social Proof (Crumbl-inspired testimonial cards).
+• Our Story Teaser Section.
+• Footer Component (No-refund policy notice, contact, socials, FAQ).
+
+3.5 ADMIN CONTROL PORTAL (`/admin`) [DYNAMIC CMS]
+--------------------------------------------------
+• Real-time Hero Banner Editor (Headline, Subtitle, Image URL, CTA button).
+• Offers & Coupons Manager (Add/Edit promo codes & banner discounts).
+• Single Stock Product Manager (Add new cookie with image, price, stock count; edit/delete existing cookies).
+• Real-time synchronization with Customer Frontend.
+
+4. GIFTING TRACK PAGE LAYOUT (`/gifting`)
+-----------------------------------------
+• Gifting Hero & Bundle Showcase.
+• Build-Your-Own Box interface (Implicit 25% MRP discount).
+• Personalized Wax-Sealed Gift Card / Note add-on.
+
+5. BRAND STORY PAGE LAYOUT (`/story`)
+--------------------------------------
+• Artisan recipe heritage narrative, quality commitment, ingredients spotlight.
+
+6. REACT COMPONENT HIERARCHY & PROTOTYPE PROJECT STRUCTURE
+---------------------------------------------------------
+• Folder organization (components, pages, context, data, styles).

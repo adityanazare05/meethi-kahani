@@ -1,0 +1,162 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{pifont}
+
+% Brand Color Palette (Meethi Kahani Exact Logo Colors)
+\definecolor{CrimsonRed}{HTML}{9A2222}
+\definecolor{LinenCream}{HTML}{FAF5EE}
+\definecolor{DarkCocoa}{HTML}{3D2314}
+\definecolor{WarmGold}{HTML}{D4A359}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=CrimsonRed,
+    urlcolor=CrimsonRed,
+    pdftitle={Meethi Kahani - Full Business Plan \& Master Specification},
+    pdfauthor={Meethi Kahani Leadership Team \& AG}
+}
+
+% Header and Footer Setup
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textcolor{CrimsonRed}{\textbf{Meethi Kahani}}}
+\lhead{\textcolor{DarkCocoa}{Master Business Plan \& Specs}}
+\rfoot{\textcolor{DarkCocoa}{Page \thepage}}
+\lfoot{\textcolor{DarkCocoa}{Confidential -- Meethi Kahani Foods}}
+
+% Title Formatting
+\titleformat{\section}{\large\bfseries\color{CrimsonRed}}{\thesection}{1em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries\color{DarkCocoa}}{\thesubsection}{1em}{}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\Huge \bfseries \textcolor{CrimsonRed}{MEETHI KAHANI}}\\[0.4cm]
+    {\Large \textcolor{WarmGold}{\textit{"Every Cookie Tells A Sweet Story"}}}\\[1.5cm]
+    
+    \rule{\linewidth}{0.5mm}\\[0.4cm]
+    {\huge \bfseries Comprehensive Business Plan \& Master Specification Document}\\[0.2cm]
+    \rule{\linewidth}{0.5mm}\\[1.5cm]
+    
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushleft} \large
+            \emph{Prepared For:}\\
+            \textbf{Founding Team}\\
+            Meethi Kahani Foods
+        \end{flushleft}
+    \end{minipage}
+    ~
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushright} \large
+            \emph{Lead Architect:}\\
+            \textbf{AG (Tech Partner)}\\
+            AI Engineering Team
+        \end{flushright}
+    \end{minipage}\\[3cm]
+    
+    {\large \textbf{Phase 1 Launch Target:} Mumbai Metropolitan Region (MMR)}\\[0.2cm]
+    {\large \textbf{Brand Promise:} 100\% Pure Eggless Artisanal Cookies | 1-Day Metro Express Delivery}\\[2cm]
+    
+    \vfill
+    {\large Date: August 2026 | Version 1.0 Final Master}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Executive Summary \& Brand Strategy}
+\subsection{Business Concept}
+\textbf{Meethi Kahani} (Mithi Kahani) is a premium Direct-To-Consumer (D2C) artisanal cookie bakery brand founded in Mumbai. The company specializes in 100\% Pure Eggless, handcrafted cookies baked fresh daily using traditional recipes, high-quality butter, desi ghee, and premium ingredients.
+
+\subsection{Core Brand Vision \& Positioning}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{100\% Eggless Guarantee:} Crucial brand USP catering to the massive Indian vegetarian market.
+    \item \textbf{2-Year Single Product Focus:} 100\% focus on Cookies for Years 1--2 (Fudges and Bakery items reserved for Year 2+ expansion).
+    \item \textbf{Visual Identity:} Deep Crimson Red (\#9A2222) and Vanilla Linen Cream (\#FAF5EE) sampled directly from the official logo.
+    \item \textbf{Brand Motto:} Strict NO-POPUP Policy for an ultra-clean, serene, luxury e-commerce experience.
+\end{itemize}
+
+\section{Market Segmentation \& Purchasing Tracks}
+\subsection{Customer Segments}
+\begin{enumerate}
+    \item \textbf{Personal Track (\texttt{/}):} Everyday single consumers ordering fresh cookie boxes for personal cravings.
+    \item \textbf{Gifting Track (\texttt{/gifting}):} Curated gift tins and Build-Your-Own gift boxes featuring custom wax-sealed greeting cards.
+    \item \textbf{Corporate Track (\texttt{/corporate}):} B2B sample requests and bulk quote inquiry forms.
+\end{enumerate}
+
+\subsection{Pricing \& Discount Architecture}
+\begin{itemize}
+    \item Order types (Personal, Gifting, Corporate) are distinct purchase categories, NOT discount tags.
+    \item Discounts are strictly promo codes created by Admin in the Offers Manager (e.g. \texttt{MEETHI20}).
+\end{itemize}
+
+\section{Core System Architecture \& Data Logic}
+\subsection{Single Master Stock Architecture}
+All customer orders (Personal, Gifting, Corporate) decrement stock from a single master database table (\texttt{Cookie\_Stock}). This eliminates duplicate inventory entries and stock sync errors.
+
+\subsection{Frontend Tech Stack}
+React 18 + Vite + Pure Vanilla CSS3 + React Router DOM + Lucide React Icons. Hosted as a lightweight Single-Page Application (SPA) on Vercel/Netlify.
+
+\section{Website Structure \& UI/UX Blueprint}
+\subsection{Centered Logo Header Layout}
+\begin{itemize}
+    \item \textbf{Left:} Hamburger Menu Icon (\texttt{🍔}).
+    \item \textbf{Center:} Meethi Kahani Logo.
+    \item \textbf{Right:} Account Icon (\texttt{👤}) \& Cart Icon (\texttt{🛒}) with live item counter badge.
+\end{itemize}
+
+\subsection{Key Page Components}
+\begin{itemize}
+    \item \textbf{Freshness Ticker:} \textit{"🔥 [X] Boxes left -- Freshly baked in the last 3 hours"}.
+    \item \textbf{Dedicated Product Details Page (\texttt{/product/:slug}):} Left side 3-4 photo gallery; Right side Title, Price, Add to Cart, Pincode Checker, and \textit{"The Kahani Behind This Cookie"} at the very bottom.
+    \item \textbf{Slide-Over Cart Drawer:} Cookie Crumb Progress Bar for free shipping.
+    \item \textbf{Customer Review Carousel:} Sliding card carousel right above the Footer.
+    \item \textbf{Pixel-Perfect Dummy Razorpay Gateway:} Simulated UPI QR scan and Card payments.
+\end{itemize}
+
+\section{Secret Admin \& Seller Portals}
+\subsection{Super Admin Portal (\texttt{/admin})}
+Protected by UserID and Password. Includes Hero Banner Carousel Manager, Offers/Coupons Manager, 2-Level Product Catalog, Campaign Creator with \texttt{\{Customer\_Name\}} dynamic parsing, Style B GST Tax Invoice Generator, Store Open/Pause Master Switch, and Low Stock Alerts.
+
+\subsection{Seller / Bakery Kitchen Portal (\texttt{/seller})}
+Protected by UserID and Password. Includes Live Kitchen Order Queue (\texttt{Received} $\rightarrow$ \texttt{Baking} $\rightarrow$ \texttt{Shipped} $\rightarrow$ \texttt{Delivered}) and Packaging Material Inventory Manager.
+
+\subsection{Dedicated Heavy Analytics Route (\texttt{/admin/analysis})}
+Isolated on \texttt{/admin/analysis} to keep main site fast. Includes the 9 Master Analytics Modules:
+\begin{enumerate}
+    \item \textbf{\#1 Stock \& Baking Behavior Analytics} (Week-to-Week \& Month-to-Month)
+    \item \textbf{Customer Demographics Analytics} (Mumbai MMR Sub-Zones: South Mumbai, Western Suburbs, Eastern Suburbs, Navi Mumbai, Thane, Kalyan-Dombivli)
+    \item Financial \& Revenue Analytics
+    \item Product Flavor Velocity Analytics
+    \item Promo \& Campaign ROI Analytics
+    \item Customer Retention Analytics (\texttt{Kisse} Coins activity)
+    \item Delivery \& Logistics Analytics
+    \item Cart \& Checkout Funnel Analytics
+    \item Customer Review Rating Analytics
+\end{enumerate}
+
+\section{Loyalty Program: Kahani Coins (Kisse)}
+Customers earn 1 \textbf{"Kissa"} coin for every \rupee 10 spent. Accumulated \textit{Kisse} can be redeemed for discounts or free cookie boxes on future orders.
+
+\section{Database Schema Specifications}
+\subsection{Master Database Tables}
+The platform utilizes 11 core relational tables: \texttt{Customers}, \texttt{Admin\_Sellers}, \texttt{Categories}, \texttt{Cookie\_Stock}, \texttt{Packaging\_Stock}, \texttt{Hero\_Banners}, \texttt{Coupons}, \texttt{Orders}, \texttt{Order\_Items}, \texttt{Serviceable\_Pincodes}, and \texttt{Customer\_Reviews}.
+
+\subsection{Standardized Address Schema}
+Addresses utilize 6 distinct fields (\texttt{address\_line\_1}, \texttt{address\_line\_2}, \texttt{town}, \texttt{city}, \texttt{pincode}, \texttt{state}) for fast SQL \texttt{GROUP BY town} regional analytics.
+
+\section{Conclusion \& Implementation Readiness}
+The master specification for \textbf{Meethi Kahani} is 100\% complete, architecturally sound, and ready for immediate software execution.
+
+\end{document}

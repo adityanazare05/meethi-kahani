@@ -1,0 +1,297 @@
+/* Meethi Kahani — Bold Retro Billboard Cookie Design System (Cantik / Crumbl Style) */
+
+:root {
+  --crimson-red: #D31820; /* Vibrant Punchy Red */
+  --crimson-hover: #B01017;
+  --bg-primary: #F9EFE5; /* Warm Cream Background */
+  --bg-secondary: #F2E4D6;
+  --bg-card: #FFFFFF;
+  --text-primary: #111111;
+  --text-secondary: #444444;
+  --muted-grey: #666666;
+  --border-color: #E2D2C3;
+  --border-bold: #111111;
+  --success-green: #D31820;
+  
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-script: 'Caveat', cursive;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #D8C3B0;
+  border-radius: 4px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.script-tagline {
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  color: var(--crimson-red);
+  font-weight: 700;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  border: none;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Bold Retro Buttons */
+.btn-primary {
+  background-color: var(--crimson-red);
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(211, 24, 32, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--crimson-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(211, 24, 32, 0.35);
+}
+
+.btn-outline {
+  background: #ffffff;
+  color: var(--text-primary);
+  border: 2px solid var(--text-primary);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.btn-outline:hover {
+  background-color: var(--text-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Eggless Badge — Brand Crimson Theme Match */
+.badge-eggless {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--bg-primary);
+  color: var(--crimson-red);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 1.5px solid var(--crimson-red);
+}
+
+.badge-eggless-icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--crimson-red);
+}
+
+/* Starburst Retro Sticker Badge */
+.starburst-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--crimson-red);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 900;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  clip-path: polygon(
+    100% 50%, 88% 65%, 95% 81%, 77% 85%, 75% 100%, 58% 93%, 45% 100%, 35% 89%,
+    18% 92%, 18% 74%, 2% 69%, 11% 53%, 0% 38%, 15% 30%, 8% 13%, 26% 13%,
+    33% 0%, 48% 9%, 60% 0%, 70% 12%, 87% 6%, 86% 25%, 100% 32%, 91% 47%
+  );
+}
+
+/* Crisp Clean Modal Overlay (No Glass/Blur) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(17, 17, 17, 0.65);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--border-bold);
+}
+
+.close-btn:hover {
+  background: var(--crimson-red);
+  color: #ffffff;
+  border-color: var(--crimson-red);
+}
+
+/* ====================================================================
+   ALIGNED LOADING ANIMATIONS & CENTERING UTILITIES
+   ==================================================================== */
+.loading-center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.loading-spinner-aligned {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: smoothSpin 0.85s linear infinite;
+  transform-origin: center center;
+}
+
+.loading-pulse-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 12px;
+  animation: pulseOpacity 1.5s ease-in-out infinite;
+}
+
+@keyframes smoothSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseOpacity {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ====================================================================
+   INTERACTIVE FEEDBACK & STAR RATING DESIGN
+   ==================================================================== */
+.feedback-star-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.feedback-star-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 26px;
+  line-height: 1;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.feedback-star-btn:hover {
+  transform: scale(1.25);
+  filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.5));
+}
+
+.feedback-star-btn.filled {
+  color: #f59e0b;
+}
+
+.feedback-star-btn.empty {
+  color: #d1d5db;
+}
+
+
